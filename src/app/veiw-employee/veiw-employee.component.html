@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <div class="text-center"><h2>Employee Details</h2></div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Date of Birth</th>
+            <th>Role</th>
+            <th>Phone</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.username }}</td>
+            <td>{{ employee.address }}</td>
+            <td>{{ employee.date }}</td>
+            <td>{{ employee.Role }}</td>
+            <td>{{ employee.number }}</td>
+            <td>{{ employee.gender }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>

@@ -1,0 +1,143 @@
+<div class="row">
+  <div class="col-lg-4"></div>
+  <div class="col-lg-4">
+    <form
+      class="m-5 p-4"
+      action=""
+      [formGroup]="employeeForm"
+      (ngSubmit)="submit()"
+    >
+      <h1 class="text-dark text-center">Add employee</h1>
+      <div class="m-3">
+        <input
+          formControlName="username"
+          name="uname"
+          class="form-control"
+          type="text"
+          placeholder="username"
+        />
+      </div>
+      <div
+        *ngIf="
+          this.employeeForm.get('username')?.touched &&
+          this.employeeForm.get('username')?.errors
+        "
+        class="m-3"
+        style="color: red"
+      >
+        please enter username
+      </div>
+      <div class="m-3">
+        <textarea
+          formControlName="address"
+          name="address"
+          class="form-control"
+          type="text"
+          placeholder="address"
+          style="height: 100px"
+        ></textarea>
+      </div>
+      <div
+        *ngIf="
+          this.employeeForm.get('address')?.touched &&
+          this.employeeForm.get('address')?.errors
+        "
+        class="m-3"
+        style="color: red"
+      >
+        please enter address
+      </div>
+      <div class="m-3">
+        <input
+          formControlName="date"
+          name="date"
+          class="form-control"
+          type="date"
+        />
+      </div>
+      <div
+        *ngIf="
+          this.employeeForm.get('date')?.touched &&
+          this.employeeForm.get('date')?.errors
+        "
+        class="m-3"
+        style="color: red"
+      >
+        please enter date
+      </div>
+      <div class="m-3">
+        <select for="select" class="form-select" formControlName="Role">
+          <option selected value="Admin">Admin</option>
+          <option value="Developer">Developer</option>
+          <option value="HR">HR</option>
+          <option value="Manager">Manager</option>
+        </select>
+      </div>
+      <div
+        *ngIf="
+          this.employeeForm.get('Role')?.touched &&
+          this.employeeForm.get('Role')?.errors
+        "
+        class="m-3"
+        style="color: red"
+      >
+        please enter your Role
+      </div>
+      <div class="m-3">
+        <input
+          formControlName="number"
+          name="number"
+          class="form-control"
+          type="number"
+          placeholder="Phone Number"
+        />
+      </div>
+
+      <div
+        *ngIf="
+          this.employeeForm.get('number')?.touched &&
+          this.employeeForm.get('number')?.errors
+        "
+        class="m-3"
+        style="color: red"
+      >
+        please enter number
+      </div>
+      <div class="m-3">
+        <p>Gender</p>
+        <input formControlName="gender" type="radio" value="male" id="male" />
+        <label for="male" class="ms-2">Male</label>
+        <input
+          formControlName="gender"
+          type="radio"
+          value="female"
+          class="ms-3"
+          id="female"
+        />
+        <label for="female" class="ms-2">Female</label>
+      </div>
+      <div
+        *ngIf="
+          this.employeeForm.get('gender')?.touched &&
+          this.employeeForm.get('gender')?.errors
+        "
+        class="m-3"
+        style="color: red"
+      >
+        please select your gender
+      </div>
+      <div class="m-3">
+        <input
+          class="btn btn-dark"
+          value="submit"
+          type="submit"
+          [disabled]="!employeeForm.valid"
+        />
+      </div>
+    </form>
+  </div>
+
+  <div class="col-lg-4"></div>
+</div>
+
+
